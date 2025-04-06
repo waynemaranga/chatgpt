@@ -1,6 +1,7 @@
 import { MODEL } from "@/config/constants";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+// import cohere, huggingface, mistral or any other
 
 export async function POST(request: Request) {
   try {
@@ -8,6 +9,7 @@ export async function POST(request: Request) {
     console.log("Received messages:", messages);
 
     const openai = new OpenAI();
+    // create client
 
     const events = await openai.responses.create({
       model: MODEL,
